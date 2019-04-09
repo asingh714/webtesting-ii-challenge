@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "react-testing-library";
 import "jest-dom/extend-expect";
 
-import Display from "./Display";
+import Display from "../Components/Display";
 
 describe("<Display />", () => {
   const pitchCount = {
