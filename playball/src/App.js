@@ -11,6 +11,15 @@ class App extends Component {
     strikes: 0
   };
 
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevState.balls === 3 && prevState.balls !== this.state.balls) {
+      this.setState({ balls: 0, strikes: 0 });
+    }
+    if (prevState.strikes === 2 && prevState.strikes !== this.state.strikes) {
+      this.setState({ balls: 0, strikes: 0 });
+    }
+  };
+
   handleBall = () => {
     this.setState(prevState => {
       return {
@@ -27,6 +36,23 @@ class App extends Component {
     });
   };
 
+  handleFoul = () => {
+    if (this.state.balls < 3) {
+      this.setState(prevState => {
+        return {
+          balls: prevState.balls + 1
+        };
+      });
+    }
+  };
+
+  handleHit = () => {
+    this.setState({
+      balls: 0,
+      strikes: 0
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -35,6 +61,8 @@ class App extends Component {
         <Dashboard
           handleBall={this.handleBall}
           handleStrike={this.handleStrike}
+          handleFoul={this.handleFoul}
+          handleHit={this.handleHit}
         />
       </div>
     );
