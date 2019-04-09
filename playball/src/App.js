@@ -13,10 +13,16 @@ class App extends Component {
 
   componentDidUpdate = (prevProps, prevState) => {
     if (prevState.balls === 3 && prevState.balls !== this.state.balls) {
-      this.setState({ balls: 0, strikes: 0 });
+      this.setState({
+        balls: 0,
+        strikes: 0
+      });
     }
     if (prevState.strikes === 2 && prevState.strikes !== this.state.strikes) {
-      this.setState({ balls: 0, strikes: 0 });
+      this.setState({
+        balls: 0,
+        strikes: 0
+      });
     }
   };
 
@@ -57,7 +63,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Play Ball!</h1>
-        <Display balls={this.state.balls} strikes={this.state.strikes} />
+        <Display pitchCount={this.state} />
         <Dashboard
           handleBall={this.handleBall}
           handleStrike={this.handleStrike}

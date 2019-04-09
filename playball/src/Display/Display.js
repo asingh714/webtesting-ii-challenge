@@ -1,11 +1,11 @@
 import React from "react";
 
 const Display = props => {
-  const { strikes, balls} = props;
+  const { strikes, balls } = props.pitchCount;
   return (
     <>
-      <p>Strikes: {strikes}</p>
-      <p>Ball: {balls}</p>
+      <p data-testid="strikes">Strikes: {strikes}</p>
+      <p data-testid="balls">Balls: {balls}</p>
     </>
   );
 };
