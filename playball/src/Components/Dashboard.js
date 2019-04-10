@@ -61,18 +61,10 @@ class Dashboard extends React.Component {
         <h1>Play Ball!</h1>
         <Display pitchCount={this.state} />
 
-        <button onClick={this.handleStrike} data-testid="strikeButton">
-          Strike
-        </button>
-        <button onClick={this.handleBall} data-testid="ballButton">
-          Ball
-        </button>
-        <button onClick={this.handleFoul} data-testid="foulButton">
-          Foul
-        </button>
-        <button onClick={this.handleHit} data-testid="hitButton">
-          Hit
-        </button>
+        <button onClick={this.handleStrike}>Strike</button>
+        <button onClick={this.handleBall}>Ball</button>
+        <button onClick={this.handleFoul}>Foul</button>
+        <button onClick={this.handleHit}>Hit</button>
       </div>
     );
   }
